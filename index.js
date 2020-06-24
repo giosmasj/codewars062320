@@ -1,6 +1,7 @@
 // Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
-
 // For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+// 8kyu
+// 06/23/2020
 
 const quarterOf = (month) => {
     if(month >= 1 && month <= 3){
@@ -17,3 +18,18 @@ const quarterOf = (month) => {
     }
     else return "what calendar you got?!"
   }
+
+  // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+  // 7kyu
+  // 06/24/2020
+
+function filter_list(l) {
+    return l.filter(l => {
+      if (typeof l == 'string') return null
+      else return l || l === 0
+    })
+  }
+// Alternate Solution for 06/24/2020
+function filter_list(l) {
+  return l.filter( e => (typeof e != 'string'))
+}

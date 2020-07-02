@@ -122,3 +122,19 @@ function iqTest(numbers){
   
   return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
 }
+
+// In this little assignment you are given a string of space separated
+// numbers, and have to return the highest and lowest number.
+
+// Example:
+
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+// 7kyu
+// 07/01/2020
+
+function highAndLow(numbers){
+  numbers = numbers.split(" ");
+  return Math.max.apply(null, numbers) + " " +  Math.min.apply(null, numbers)
+}

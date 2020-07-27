@@ -204,45 +204,45 @@ function isValidWalk(walk) {
     return true;
   }
 
-  // best practice
+// best practice
 
-  function isValidWalk(walk) {
-    var dx = 0
-    var dy = 0
-    var dt = walk.length
-    
-    for (var i = 0; i < walk.length; i++) {
-      switch (walk[i]) {
-        case 'n': dy--; break
-        case 's': dy++; break
-        case 'w': dx--; break
-        case 'e': dx++; break
-      }
-    }
-    
-    return dt === 10 && dx === 0 && dy === 0
-  }
-
-  // Take 2 strings s1 and s2 including only letters from ato z.
-  // Return a new sorted string, the longest possible, containing
-  // distinct letters, each taken only once - coming from s1 or s2.
-  // Examples:
-  // a = "xyaabbbccccdefww"
-  // b = "xxxxyyyyabklmopq"
-  // longest(a, b) -> "abcdefklmopqwxy"
-
-  // a = "abcdefghijklmnopqrstuvwxyz"
-  // longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
-  // 7kyu
-  // 07/21/2020
-  // this is best practice
-  const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
-
-  // another way to solve
+function isValidWalk(walk) {
+  var dx = 0
+  var dy = 0
+  var dt = walk.length
   
-  function longest(s1, s2) {
-    return Array.from(new Set(s1 + s2)).sort().join('')
+  for (var i = 0; i < walk.length; i++) {
+    switch (walk[i]) {
+      case 'n': dy--; break
+      case 's': dy++; break
+      case 'w': dx--; break
+      case 'e': dx++; break
+    }
   }
+  
+  return dt === 10 && dx === 0 && dy === 0
+}
+
+// Take 2 strings s1 and s2 including only letters from ato z.
+// Return a new sorted string, the longest possible, containing
+// distinct letters, each taken only once - coming from s1 or s2.
+// Examples:
+// a = "xyaabbbccccdefww"
+// b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+// 7kyu
+// 07/21/2020
+// this is best practice
+const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+
+// another way to solve
+
+function longest(s1, s2) {
+  return Array.from(new Set(s1 + s2)).sort().join('')
+}
 
 // Create a function that returns the name of the winner in a fight
 // between two fighters.
@@ -327,4 +327,37 @@ function twoSum(numbers, target) {
       }
     }
   }
+}
+
+// Jaden Smith, the son of Will Smith, is the star of films such as The
+// Karate Kid (2010) and After Earth (2013). Jaden is also known for some
+// of his philosophy that he delivers via Twitter. When writing on Twitter,
+// he is known for almost always capitalizing every word. For simplicity,
+// you'll have to capitalize each word, check out how contractions are
+// expected to be in the example below.
+
+// Your task is to convert strings to how they would be written by Jaden
+// Smith. The strings are actual quotes from Jaden Smith, but they are not
+// capitalized in the same way he originally typed them.
+
+// Example:
+
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+// 7/27/2020
+// 7kyu
+
+String.prototype.toJadenCase = function () {
+  function capitalizeFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  return this.split(' ').map(capitalizeFirstLetter).join(' ')
+}
+
+// best practice
+
+String.prototype.toJadenCase = function () { 
+  return this.split(" ").map(function(word){
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(" ");
 }

@@ -3,36 +3,36 @@
 // 8kyu
 // 06/23/2020
 
-const quarterOf = (month) => {
-    if(month >= 1 && month <= 3){
-    return 1
-    }
-    if(month >= 4 && month <= 6){
-    return 2
-    }
-    if(month >= 7 && month <= 9){
-    return 3
-    }
-    if(month >= 10 && month <= 12){
-    return 4
-    }
-    else return "what calendar you got?!"
-  }
+// const quarterOf = (month) => {
+//     if(month >= 1 && month <= 3){
+//     return 1
+//     }
+//     if(month >= 4 && month <= 6){
+//     return 2
+//     }
+//     if(month >= 7 && month <= 9){
+//     return 3
+//     }
+//     if(month >= 10 && month <= 12){
+//     return 4
+//     }
+//     else return "what calendar you got?!"
+//   }
 
   // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
   // 7kyu
   // 06/24/2020
 
-function filter_list(l) {
-    return l.filter(l => {
-      if (typeof l == 'string') return null
-      else return l || l === 0
-    })
-  }
-// Alternate Solution for 06/24/2020
-function filter_list(l) {
-  return l.filter( e => (typeof e != 'string'))
-}
+// function filter_list(l) {
+//     return l.filter(l => {
+//       if (typeof l == 'string') return null
+//       else return l || l === 0
+//     })
+//   }
+// // Alternate Solution for 06/24/2020
+// function filter_list(l) {
+//   return l.filter( e => (typeof e != 'string'))
+// }
 
 // Given an array of integers your solution should find the smallest integer.
 // For example:
@@ -42,11 +42,11 @@ function filter_list(l) {
 // 8kyu
 // 06/25/2020
 
-class SmallestIntegerFinder {
-  findSmallestInt(args) {
-    return Math.min(...args)
-    }
-  }
+// class SmallestIntegerFinder {
+//   findSmallestInt(args) {
+//     return Math.min(...args)
+//     }
+//   }
 
 
 // Create a function named divisors/Divisors that takes an integer n > 1 and returns
@@ -59,26 +59,26 @@ class SmallestIntegerFinder {
 // divisors(25); should return [5]
 // divisors(13); should return "13 is prime"
 
-function divisors(integer) {
-  arr = [];
-   for (var i=2;i<integer;i++){
-    if (integer % i === 0){
-     arr.push(i);
-     }
-     } if (arr.length === 0) {
-        return `${integer} is prime`;
-     } else {
-        return arr;
-     }
-  }
+// function divisors(integer) {
+//   arr = [];
+//    for (var i=2;i<integer;i++){
+//     if (integer % i === 0){
+//      arr.push(i);
+//      }
+//      } if (arr.length === 0) {
+//         return `${integer} is prime`;
+//      } else {
+//         return arr;
+//      }
+//   }
 
-// refactored (best practice) solution
+// // refactored (best practice) solution
 
-function divisors(integer) {
-  var res = []
-  for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
-  return res.length ? res : integer + ' is prime'
-};
+// function divisors(integer) {
+//   var res = []
+//   for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
+//   return res.length ? res : integer + ' is prime'
+// };
 
 // Bob is preparing to pass IQ test. The most frequent task in this
 // test is to find out which one of the given numbers differs from the
@@ -96,32 +96,32 @@ function divisors(integer) {
 // 6kyu
 // 06/30/2020
 
-function iqTest(numbers){
-  let numArr = numbers.split(' ');
-  let oddArr = [];
-  let evenArr = [];
-  for(let i = 0; i < numArr.length; i ++){
-    if(numArr[i] % 2) {
-      oddArr.push(i + 1)
-      } else {
-        evenArr.push(i + 1)
-      }
-    }
-    if(oddArr.length === 1) {
-      return oddArr[0]
-    } else {
-      return evenArr[0]
-    }
-}
-// Best Practice
-function iqTest(numbers){
-  numbers = numbers.split(" ").map(function(el){return parseInt(el)});
+// function iqTest(numbers){
+//   let numArr = numbers.split(' ');
+//   let oddArr = [];
+//   let evenArr = [];
+//   for(let i = 0; i < numArr.length; i ++){
+//     if(numArr[i] % 2) {
+//       oddArr.push(i + 1)
+//       } else {
+//         evenArr.push(i + 1)
+//       }
+//     }
+//     if(oddArr.length === 1) {
+//       return oddArr[0]
+//     } else {
+//       return evenArr[0]
+//     }
+// }
+// // Best Practice
+// function iqTest(numbers){
+//   numbers = numbers.split(" ").map(function(el){return parseInt(el)});
   
-  var odd = numbers.filter(function(el){ return el % 2 === 1});
-  var even = numbers.filter(function(el){ return el % 2 === 0});
+//   var odd = numbers.filter(function(el){ return el % 2 === 1});
+//   var even = numbers.filter(function(el){ return el % 2 === 0});
   
-  return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
-}
+//   return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
+// }
 
 // In this little assignment you are given a string of space separated
 // numbers, and have to return the highest and lowest number.
@@ -134,10 +134,10 @@ function iqTest(numbers){
 // 7kyu
 // 07/01/2020
 
-function highAndLow(numbers){
-  numbers = numbers.split(" ");
-  return Math.max.apply(null, numbers) + " " +  Math.min.apply(null, numbers)
-}
+// function highAndLow(numbers){
+//   numbers = numbers.split(" ");
+//   return Math.max.apply(null, numbers) + " " +  Math.min.apply(null, numbers)
+// }
 
 // You might know some pretty large perfect squares. But what about the NEXT one?
 
@@ -153,16 +153,16 @@ function highAndLow(numbers){
 // 7kyu
 // 07/14/2020
 
-function findNextSquare(sq) {
-  // Return the next square if sq is a perfect square, -1 otherwise
-  return Math.sqrt(sq)%1===0 ? Math.pow(Math.sqrt(sq)+1,2) : -1
-}
+// function findNextSquare(sq) {
+//   // Return the next square if sq is a perfect square, -1 otherwise
+//   return Math.sqrt(sq)%1===0 ? Math.pow(Math.sqrt(sq)+1,2) : -1
+// }
 
-// best practice/refactored solution
+// // best practice/refactored solution
 
-function findNextSquare(sq) {
-  return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
-}
+// function findNextSquare(sq) {
+//   return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2);
+// }
 
 // You live in the city of Cartesia where all roads are laid out in 
 // a perfect grid. You arrived ten minutes too early to an appointment,
@@ -184,44 +184,44 @@ function findNextSquare(sq) {
 //6kyu
 //07/20/2020
 
-function isValidWalk(walk) {
-  const walkVectorArray = walk.map(function(direction){
-    if(direction === 'n'){
-      return 1;
-    }
-    else if(direction === 's'){
-      return -1;
-    }
-    else if (direction === 'e'){
-      return 2;
-    }
-    else if (direction === 'w'){
-      return -2;
-    }
-  });
-  const walkVectorSum = walkVectorArray.reduce(function(a,b){return a + b},0);
-  if(walkVectorSum === 0 && walk.length === 10){
-    return true;
-  }
+// function isValidWalk(walk) {
+//   const walkVectorArray = walk.map(function(direction){
+//     if(direction === 'n'){
+//       return 1;
+//     }
+//     else if(direction === 's'){
+//       return -1;
+//     }
+//     else if (direction === 'e'){
+//       return 2;
+//     }
+//     else if (direction === 'w'){
+//       return -2;
+//     }
+//   });
+//   const walkVectorSum = walkVectorArray.reduce(function(a,b){return a + b},0);
+//   if(walkVectorSum === 0 && walk.length === 10){
+//     return true;
+//   }
 
 // best practice
 
-function isValidWalk(walk) {
-  var dx = 0
-  var dy = 0
-  var dt = walk.length
+// function isValidWalk(walk) {
+//   var dx = 0
+//   var dy = 0
+//   var dt = walk.length
   
-  for (var i = 0; i < walk.length; i++) {
-    switch (walk[i]) {
-      case 'n': dy--; break
-      case 's': dy++; break
-      case 'w': dx--; break
-      case 'e': dx++; break
-    }
-  }
+//   for (var i = 0; i < walk.length; i++) {
+//     switch (walk[i]) {
+//       case 'n': dy--; break
+//       case 's': dy++; break
+//       case 'w': dx--; break
+//       case 'e': dx++; break
+//     }
+//   }
   
-  return dt === 10 && dx === 0 && dy === 0
-}
+//   return dt === 10 && dx === 0 && dy === 0
+// }
 
 // Take 2 strings s1 and s2 including only letters from ato z.
 // Return a new sorted string, the longest possible, containing
@@ -236,13 +236,13 @@ function isValidWalk(walk) {
 // 7kyu
 // 07/21/2020
 // this is best practice
-const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
+// const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
 
 // another way to solve
 
-function longest(s1, s2) {
-  return Array.from(new Set(s1 + s2)).sort().join('')
-}
+// function longest(s1, s2) {
+//   return Array.from(new Set(s1 + s2)).sort().join('')
+// }
 
 // Create a function that returns the name of the winner in a fight
 // between two fighters.
@@ -267,39 +267,39 @@ function longest(s1, s2) {
 // 07/22/2020
 // I sold my car today!!!!
 
-function declareWinner(fighterA, fighterB, firstAttacker) {
-  const args = Array.from(arguments);
-  const fighters =  args.filter(arg => !arg[2]);  
-  firstAttacker = fighters.find(fighter => fighter.name === firstAttacker);
-  const secondAttacker = fighters.find(fighter => fighter.name != firstAttacker);
+// function declareWinner(fighterA, fighterB, firstAttacker) {
+//   const args = Array.from(arguments);
+//   const fighters =  args.filter(arg => !arg[2]);  
+//   firstAttacker = fighters.find(fighter => fighter.name === firstAttacker);
+//   const secondAttacker = fighters.find(fighter => fighter.name != firstAttacker);
 
-  do {
-    secondAttacker.health = secondAttacker.health - firstAttacker.damagePerAttack;
-    if (secondAttacker.health <= 0) {
-      return firstAttacker.name;
-    } else {
-      firstAttacker.health = firstAttacker.health - secondAttacker.damagePerAttack;
-    }
-    if (firstAttacker.health <= 0) {
-      return secondAttacker.name;
-    }
-  }
-  while (secondAttacker.health >= 0 || firstAttacker.health >= 0 ); 
-}
+//   do {
+//     secondAttacker.health = secondAttacker.health - firstAttacker.damagePerAttack;
+//     if (secondAttacker.health <= 0) {
+//       return firstAttacker.name;
+//     } else {
+//       firstAttacker.health = firstAttacker.health - secondAttacker.damagePerAttack;
+//     }
+//     if (firstAttacker.health <= 0) {
+//       return secondAttacker.name;
+//     }
+//   }
+//   while (secondAttacker.health >= 0 || firstAttacker.health >= 0 ); 
+// }
 
 // refactored
 
-function declareWinner(fighter1, fighter2, firstAttacker) {
-  var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
-  var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
-  if(fac1 < fac2) {
-    return fighter2.name;
-  } else if(fac2 < fac1) {
-    return fighter1.name;
-  } else {
-    return firstAttacker;
-  }
-}
+// function declareWinner(fighter1, fighter2, firstAttacker) {
+//   var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
+//   var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
+//   if(fac1 < fac2) {
+//     return fighter2.name;
+//   } else if(fac2 < fac1) {
+//     return fighter1.name;
+//   } else {
+//     return firstAttacker;
+//   }
+// }
 
 // Write a function that takes an array of numbers (integers for the tests)
 // and a target number. It should find two different items in the array
@@ -319,15 +319,15 @@ function declareWinner(fighter1, fighter2, firstAttacker) {
 // 7/24/2020
 // 6 kyu
 
-function twoSum(numbers, target) {
-  for(let index1 = 0; index1 < numbers.length; index1++){
-    for(let index2 = index1 + 1; index2 < numbers.length; index2++){
-      if(numbers[index1] + numbers[index2] === target){
-        return [index1, index2]
-      }
-    }
-  }
-}
+// function twoSum(numbers, target) {
+//   for(let index1 = 0; index1 < numbers.length; index1++){
+//     for(let index2 = index1 + 1; index2 < numbers.length; index2++){
+//       if(numbers[index1] + numbers[index2] === target){
+//         return [index1, index2]
+//       }
+//     }
+//   }
+// }
 
 // Jaden Smith, the son of Will Smith, is the star of films such as The
 // Karate Kid (2010) and After Earth (2013). Jaden is also known for some
@@ -347,20 +347,20 @@ function twoSum(numbers, target) {
 // 7/27/2020
 // 7kyu
 
-String.prototype.toJadenCase = function () {
-  function capitalizeFirstLetter(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  return this.split(' ').map(capitalizeFirstLetter).join(' ')
-}
+// String.prototype.toJadenCase = function () {
+//   function capitalizeFirstLetter(string){
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+//   }
+//   return this.split(' ').map(capitalizeFirstLetter).join(' ')
+// }
 
 // best practice
 
-String.prototype.toJadenCase = function () { 
-  return this.split(" ").map(function(word){
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  }).join(" ");
-}
+// String.prototype.toJadenCase = function () { 
+//   return this.split(" ").map(function(word){
+//     return word.charAt(0).toUpperCase() + word.slice(1);
+//   }).join(" ");
+// }
 
 // An isogram is a word that has no repeating letters, consecutive or
 // non-consecutive. Implement a function that determines whether a string
@@ -373,30 +373,30 @@ String.prototype.toJadenCase = function () {
 // 7/28/2020
 // 7kyu
 
-function isIsogram(str){
-  let i, j;
-  str = str.toLowerCase();
-  for(i = 0; i < str.length; i++) {
-    for(j = i + 1; j < str.length; j++) {
-      if(str[i] === str[j]) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
+// function isIsogram(str){
+//   let i, j;
+//   str = str.toLowerCase();
+//   for(i = 0; i < str.length; i++) {
+//     for(j = i + 1; j < str.length; j++) {
+//       if(str[i] === str[j]) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
 
 // best practice
 
-function isIsogram(str){ 
-  return !/(\w).*\1/i.test(str)
-}
+// function isIsogram(str){ 
+//   return !/(\w).*\1/i.test(str)
+// }
 
 // clever solution
 
-function isIsogram(str){
-  return new Set(str.toUpperCase()).size == str.length;
-}
+// function isIsogram(str){
+//   return new Set(str.toUpperCase()).size == str.length;
+// }
 
 // repeat practice of TwotoOne
 // Take 2 strings s1 and s2 including only letters from ato z.

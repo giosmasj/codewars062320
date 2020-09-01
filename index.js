@@ -449,3 +449,28 @@ function uniqueInOrder(it){
 var uniqueInOrder = function(iterable){
   return [...iterable].filter((a, i) => a !== iterable[i-1])
 }
+
+// Count the number of divisors of a positive integer n.
+
+// Random tests go up to n = 500000.
+
+// Examples
+// divisors(4)  == 3  # 1, 2, 4
+// divisors(5)  == 2  # 1, 5
+// divisors(12) == 6  # 1, 2, 3, 4, 6, 12
+// divisors(30) == 8  # 1, 2, 3, 5, 6, 10
+// First JS solution in awhile! Actually had to sole in Python first lol
+// 7kyu
+// 9/1/2020
+
+function getDivisorsCnt(n) {
+  count = 0
+  divBy = 0
+  while (n > divBy) {
+    divBy += 1
+    if (n % divBy === 0) {
+      count += 1
+    }
+  }
+  return count
+}

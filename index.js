@@ -474,3 +474,12 @@ function getDivisorsCnt(n) {
   }
   return count
 }
+
+// best practice, less lines but is it more readable?
+
+function getDivisorsCnt(n) {
+  for (var d = 0, i = n; i > 0; i--) {
+    if (n % i == 0) d++;
+  }
+  return d
+}
